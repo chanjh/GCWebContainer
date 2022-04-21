@@ -1,0 +1,6 @@
+platform :ios, '14.0'
+
+target 'GCWebContainerExample' do
+  use_frameworks!
+  pod 'GCWebContainer', :path=>'../'
+end
