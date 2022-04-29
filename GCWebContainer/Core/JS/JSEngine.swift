@@ -10,7 +10,7 @@ import WebKit
 
 // Native --> JS
 public class JSEngine: NSObject {
-    let webView: GCWebView
+    weak var webView: GCWebView?
     init(_ webView: GCWebView) {
         self.webView = webView
         super.init()
@@ -41,12 +41,12 @@ public class JSEngine: NSObject {
     
     private func callJsString(_ javaScriptString: String,
                               completionHandler: ((Any?, Error?) -> Void)?) {
-        let runJS = {
-            self.webView.evaluateJavaScript(javaScriptString) { (obj, error) in
+        let runJS: () -> Void = { [weak self] in
+            self?.webView?.evaluateJavaScript(javaScriptString) { (obj, error) in
                 completionHandler?(obj, error)
                 guard let error = error else { return }
                 print(javaScriptString)
-                print("evaluateJavaScript for \(self.webView.url?.absoluteString ?? "") fail. Error: \(error.localizedDescription)")
+                print("evaluateJavaScript for \(self?.webView?.url?.absoluteString ?? "") fail. Error: \(error.localizedDescription)")
             }
         }
         
@@ -84,8 +84,8 @@ public class JSEngine: NSObject {
                       in frame: WKFrameInfo? = nil,
                       in contentWorld: WKContentWorld,
                       completionHandler: ((Result<Any, Error>) -> Void)? = nil) {
-        let runJS = {
-            self.webView.evaluateJavaScript(javaScriptString, in: frame, in: contentWorld) { result in
+        let runJS: () -> Void = { [weak self] in
+            self?.webView?.evaluateJavaScript(javaScriptString, in: frame, in: contentWorld) { result in
                 completionHandler?(result)
                 print(javaScriptString)
                 print(result)
