@@ -7,7 +7,10 @@
 //
 
 import Foundation
-public protocol WebContainerModelConfig: AnyObject { }
+public protocol WebContainerModelConfig: AnyObject {
+    var cookie: WebContainerCookieHandler? { get }
+}
+
 public protocol WebContainerUIConfig: AnyObject {
     var webView: GCWebView { get }
     var navigator: WebContainerNavigator? { get }
@@ -15,6 +18,10 @@ public protocol WebContainerUIConfig: AnyObject {
 public protocol WebContainerNavigator {
     func openURL(_ options: OpenURLOptions) -> GCTabInfo
     func removeTab(_ options: GCTabInfo)
+}
+
+public protocol WebContainerCookieHandler {
+    func get(name: String, url: String, _ completionHandler: ((HTTPCookie?) -> Void)?)
 }
 
 public struct GCTabInfo {
