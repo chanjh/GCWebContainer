@@ -1,8 +1,12 @@
+web/node_modules
+web/.vscode
+web/Frontend
+
 .DS_Store
 
-Example/Podfile.lock
-Example/Pods/**/*
-Example/xcuserdata/
-Example/project.xcworkspace/
-Example/DerivedData/
-Example/GCWebContainerExample.xcworkspace/xcuserdata/**/*
+ios/Example/Podfile.lock
+ios/Example/Pods/**/*
+ios/Example/xcuserdata/
+ios/Example/project.xcworkspace/
+ios/Example/DerivedData/
+ios/Example/GCWebContainerExample.xcworkspace/xcuserdata/**/*

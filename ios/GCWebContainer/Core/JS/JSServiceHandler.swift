@@ -15,6 +15,7 @@ public protocol WebContainerUIConfig: AnyObject {
     var webView: GCWebView { get }
     var navigator: WebContainerNavigator? { get }
 }
+
 public protocol WebContainerNavigator {
     func openURL(_ options: OpenURLOptions) -> GCTabInfo
     func removeTab(_ options: GCTabInfo)
