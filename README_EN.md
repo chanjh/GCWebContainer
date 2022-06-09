@@ -1,6 +1,6 @@
-> GCWebContainer 是 [Pandora](https://github.com/chanjh/Pandora) 计划的一部分；后者让 iOS 应用可以完整运行原生 Chrome Extension。
+> GCWebContainer is part of [Pandora](https://github.com/chanjh/Pandora) project which makes WKWebView running original Chrome Extension App. 
 
-GCWebContainer 是一个同时包含 TypeScript 和 Swift 的项目，用于连接 WKWebView 和 JS Runtime。
+GCWebContainer is a TypeScript and Swift framework connecting between WKWebview and JS Runtime.
 
 [![GitHub license](https://img.shields.io/github/license/chanjh/GCWebContainer)](https://github.com/chanjh/GCWebContainer)
 
@@ -9,41 +9,41 @@ https://img.shields.io/badge/cocoapods-supported-4BC51D.svg)](https://github.com
 [![npm](
 https://img.shields.io/badge/npm-supported-4BC51D.svg)](https://github.com/chanjh/GCWebContainer/web)
 
-[English docs](https://github.com/chanjh/GCWebContainer/README_EN.md) ｜ 中文文档
+[中文文档](https://github.com/chanjh/GCWebContainer/README.md) ｜ English docs
 
-## 使用方式
+## Usage
 
-### 1. JS 部分
-1. 使用 NPM 安装框架
+### 1. JS
+1. Installation with NPM
 ```
 npm install --save @pandola/bridge
 ```
 
-2. 初始化
+2. Initialization
 ``` JavaScript
 import launcher from '@pandola/bridge/src/launcher'
 launcher();
 ```
 
-3. 调用 JSAPI
+3. Use your JSAPI
 ``` JavaScript
 jsbridge('bookmarks.create', { bookmark }, callback)
 ```
 
 ### 2. iOS
 
-1. 使用 CocoaPods 安装框架
+1. Installation with CocoaPods
 
 ```
 pod 'GCWebContainer', '~> 5.0'
 ```
 
-2. 启动 GCWebView
+2. Start GCWebView
 ``` Swift
 let webView = GCWebView();
 ```
 
-3. 新建一个 JSService
+3. Create your JSService
 ``` Swift
 import Foundation
 import GCWebContainer
@@ -67,13 +67,14 @@ extension JSServiceType {
 }
 ```
 
-4. 注册该 JSService
+4. Register JSService
 ``` Swift
 webView.jsServiceManager?.register(handler: BookmarkService(self, ui: webView.ui, model: webView.model))
 ```
 
-## 了解更多
-GCWebContainer 是 [Pandora](https://github.com/chanjh/Pandora) 计划的一部分，你可以通过 Pandora 和 [GCWebContainerDemo](https://github.com/chanjh/GCWebContainerDemo) 了解更多使用方式。
+## Learn More
+GCWebContainer is part of [Pandora](https://github.com/chanjh/Pandora), you can learn more on Pandora Framework and [GCWebContainerDemo](https://github.com/chanjh/GCWebContainerDemo).
+
 
 ## License
-[LICENSE](https://github.com/chanjh/GCWebContainer/LICENSE) 许可证。
+GCWebContainer is released under the MIT license. See [LICENSE](https://github.com/chanjh/GCWebContainer/LICENSE) for details.
