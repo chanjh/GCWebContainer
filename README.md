@@ -9,7 +9,7 @@ https://img.shields.io/badge/cocoapods-supported-4BC51D.svg)](https://github.com
 [![npm](
 https://img.shields.io/badge/npm-supported-4BC51D.svg)](https://github.com/chanjh/GCWebContainer/web)
 
-[English docs](https://github.com/chanjh/GCWebContainer/README_EN.md) ｜ 中文文档
+[English docs](https://github.com/chanjh/GCWebContainer/blob/main/README_EN.md) ｜ 中文文档
 
 ## 使用方式
 
