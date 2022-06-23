@@ -15,7 +15,7 @@ GCWebContainer
 
   s.ios.deployment_target = '14.0'
 
-  s.source_files = 'GCWebContainer/**/*{swift,h,m}'
+  s.source_files = 'ios/GCWebContainer/**/*{swift,h,m}'
   s.swift_versions = '5.0'
   
 end
