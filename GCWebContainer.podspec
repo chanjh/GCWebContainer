@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GCWebContainer'
-  s.version          = '0.1.0'
+  s.version          = '0.1.5'
   s.summary          = 'GCWebContainer'
 
   s.description      = <<-DESC
