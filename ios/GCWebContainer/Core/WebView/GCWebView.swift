@@ -36,6 +36,7 @@ open class GCWebView: WebView, GCWebViewInterface {
         super.init(frame: frame, configuration: configuration)
         self.model = model
         self.ui = ui
+        self.identifier = Int(Int64.random(in: 0...9007199254740990))
         _initDelegates()
         _initContext()
         onInit()
@@ -88,7 +89,7 @@ extension GCWebView {
 
 private var kGCWebViewIDKey: UInt8 = 0
 public extension GCWebView {
-    public var identifier: Int? {
+    var identifier: Int? {
         get {
             return objc_getAssociatedObject(self, &kGCWebViewIDKey) as? Int
         }
